@@ -17,7 +17,8 @@ def Home():
 def predict():
     Fuel_Type_Diesel=0
     if request.method == 'POST':
-        Year = int(request.form['Year'])
+       # Year = 2016
+        Year = int(request.form.get("Year",False))
         Present_Price=float(request.form['Present_Price'])
         Kms_Driven=int(request.form['Kms_Driven'])
         Kms_Driven2=np.log(Kms_Driven)
